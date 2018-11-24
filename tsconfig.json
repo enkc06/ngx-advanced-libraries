@@ -16,6 +16,14 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-advanced-pipes": [
+        "dist/ngx-advanced-pipes"
+      ],
+      "ngx-advanced-pipes/*": [
+        "dist/ngx-advanced-pipes/*"
+      ]
+    }
   }
 }
