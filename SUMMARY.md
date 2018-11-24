@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Initial page](README.md)
+* [Welcome to advanced pipes](README.md)
 
 ## Docs
 
