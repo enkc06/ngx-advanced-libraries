@@ -4,5 +4,5 @@
 
 ## Docs
 
-* [Aggregate](docs/untitled-1.md)
+* [Aggregate](docs/aggregate.md)
 
