@@ -1,6 +1,6 @@
 {
-  "name": "ngx-advanced-pipes",
-  "version": "0.0.4",
+  "name": "ngx-advanced-utils",
+  "version": "0.0.1",
   "author": "Naren",
   "publishConfig": {
     "access": "public"

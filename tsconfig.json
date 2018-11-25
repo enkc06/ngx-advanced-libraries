@@ -23,6 +23,12 @@
       ],
       "ngx-advanced-pipes/*": [
         "dist/ngx-advanced-pipes/*"
+      ],
+      "ngx-advanced-utils": [
+        "dist/ngx-advanced-utils"
+      ],
+      "ngx-advanced-utils/*": [
+        "dist/ngx-advanced-utils/*"
       ]
     }
   }

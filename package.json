@@ -8,9 +8,12 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build_lib": "ng build ngx-advanced-pipes",
-    "npm_pack": "cd dist/ngx-advanced-pipes && npm pack",
-    "package": "npm run build_lib && npm run npm_pack"
+    "build_lib_pipes": "ng build ngx-advanced-pipes",
+    "npm_pack_pipes": "cd dist/ngx-advanced-pipes && npm pack",
+    "package_pipes": "npm run build_lib_pipes && npm run npm_pack_pipes",
+    "build_lib_utils": "ng build ngx-advanced-utils",
+    "npm_pack_utils": "cd dist/ngx-advanced-utils && npm pack",
+    "package_utils": "npm run build_lib_utils && npm run npm_pack_utils"
   },
   "dependencies": {
     "@angular/animations": "^7.1.0",

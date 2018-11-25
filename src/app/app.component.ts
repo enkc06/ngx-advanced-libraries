@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AutocompleteAddressPipe } from 'ngx-advanced-pipes';
-
+import { MathService } from 'ngx-advanced-utils';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -104,7 +104,10 @@ export class AppComponent implements OnInit {
   origin = [33.92865, -84.30728];
   destination = [33.96953, -84.26158];
 
-  constructor(public AutocompleteAddress: AutocompleteAddressPipe) {}
+  constructor(
+    public AutocompleteAddress: AutocompleteAddressPipe,
+    public _math: MathService
+  ) {}
 
   alphaArray = [{ id: 'b' }, { id: 'a' }, { id: 'ab' }, { id: 'ba' }];
 
@@ -118,6 +121,10 @@ export class AppComponent implements OnInit {
     // );
 
     console.log(this.filtrarrayObject(this.alphaArray, 'id'));
+
+    console.log(
+      this._math.distanceBetweenOrigins(this.destination, this.origin)
+    );
   }
 
   // filter with array of objects with array of objects
