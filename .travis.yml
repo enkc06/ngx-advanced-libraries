@@ -6,7 +6,18 @@ node_js:
 
 cache: yarn
 
-install: yarn
-script:
-  - yarn lint
-  - yarn tests
+jobs:
+  include:
+    - stage: npm package
+      if: tag IS present
+      node_js: '8'
+      script: yarn compile
+      before_deploy:
+        - cd dist
+      deploy:
+        provider: npm
+        email: '$NPM_EMAIL'
+        api_key: '$NPM_TOKEN'
+        skip_cleanup: true
+        on:
+          tags: true
