@@ -1,24 +1,113 @@
-<h1 class="no-margins">
-  {{ 6767988988789 | shortenLargeNumber: 'currency':'2' }}
-</h1>
-<h1 class="no-margins">{{ 788797 | shortenLargeNumber: '':'2' }}</h1>
+<!--
+  <h1 class="no-margins">
+    {{ 6767988988789 | shortenLargeNumber: 'currency':'2' }}
+  </h1>
+  <h1 class="no-margins">{{ 788797 | shortenLargeNumber: '':'2' }}</h1>
 
-<p>{{ addressAutocompleteData | autocompleteAddress | json }}</p>
-<br />
+  <p>{{ addressAutocompleteData | autocompleteAddress | json }}</p>
+  <br />
 
-<h2>Uniq</h2>
-<p>{{ arrayObj | uniqBy: 'card' | json }}</p>
-<p>{{ arrayObj | uniqByCollection: arrayObj2:'card' | json }}</p>
-<br />
+  <h2>Uniq</h2>
+  <p>{{ arrayObj | uniqBy: 'card' | json }}</p>
+  <p>{{ arrayObj | uniqByCollection: arrayObj2:'card' | json }}</p>
+  <br />
 
-<h2>Not Uniq</h2>
-<p>{{ arrayObj | uniqBy: 'card':'!' | json }}</p>
-<!-- <p>{{ arrayObj4 | uniqByCollection: arrayObj3:'card':'!' | json }}</p> -->
-<br />
+  <h2>Not Uniq</h2>
+  <p>{{ arrayObj | uniqBy: 'card':'!' | json }}</p>
+  <br />
 
-<h2>Sort</h2>
-<p>{{ arraySort | sortedBy }}</p>
-<p>{{ arraySort | sortedBy: 'desc' }}</p>
+  <h2>Sort</h2>
+  <p>{{ arraySort | sortedBy }}</p>
+  <p>{{ arraySort | sortedBy: 'desc' }}</p>
 
-<h2>Distance Between origins</h2>
-<p>{{ destination | distanceBetweenOrigins: origin }}</p>
+  <h2>Distance Between origins</h2>
+  <p>{{ destination | distanceBetweenOrigins: origin }}</p>
+-->
+
+<h4>filter with two array of objects by prop</h4>
+<p>
+  {{
+    this._CollectionService.filterTwoArrayOfObjectsByProp(
+      this.arrayObj,
+      this.arrayObj2,
+      'card'
+    ) | json
+  }}
+</p>
+
+<h4>uniq filter with two array of objects by prop</h4>
+<p>
+  {{
+    this._CollectionService.UniqFilterTwoArrayOfObjectsByProp(
+      this.arrayObj,
+      this.arrayObj2,
+      'card'
+    ) | json
+  }}
+</p>
+
+<h4>uniq filter with two array of objects by prop and removingDuplicates</h4>
+<p>
+  {{
+    this._CollectionService.uniqFilterTwoArrayOfObjectsByPropAndRemoveDuplicates(
+      this.arrayObj,
+      this.arrayObj2,
+      'card'
+    ) | json
+  }}
+</p>
+
+<h4>notuniq filter with two array of objects by prop and removingDuplicates</h4>
+<p>
+  {{
+    this._CollectionService.notUniqFilterTwoArrayOfObjectsByPropAndRemoveDuplicates(
+      this.arrayObj,
+      this.arrayObj2,
+      'card'
+    ) | json
+  }}
+</p>
+
+<h4>filter with two array of objects by prop</h4>
+<p>
+  {{
+    this._CollectionService.filterArrayOfObjectsArrayWithArrayByProp(
+      this.arrayObj4,
+      this.arrayObj5,
+      'card'
+    ) | json
+  }}
+</p>
+
+<h4>filter with two array of objects by prop</h4>
+<p>
+  {{
+    this._CollectionService.uniqFilterArrayOfObjectsArrayWithArrayByProp(
+      this.arrayObj4,
+      this.arrayObj5,
+      'card'
+    ) | json
+  }}
+</p>
+
+<h4>filter with two array of objects by prop</h4>
+<p>
+  {{
+    this._CollectionService.filterArrayOfObjectsArrayWithArrayOfObjectsByProp(
+      this.arrayObj4,
+      this.arrayObj2,
+      'card'
+    ) | json
+  }}
+</p>
+
+<h4>filter with two array of objects by prop</h4>
+<p>
+  {{
+    this._CollectionService.uniqFilterArrayOfObjectsArrayWithArrayOfObjectsByProp(
+      this.arrayObj4,
+      this.arrayObj3,
+      'card'
+    ) | json
+  }}
+</p>

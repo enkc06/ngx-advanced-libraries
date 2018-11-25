@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AutocompleteAddressPipe } from 'ngx-advanced-pipes';
-import { MathService } from 'ngx-advanced-utils';
+import { MathService, CollectionService } from 'ngx-advanced-utils';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,34 +8,13 @@ import { MathService } from 'ngx-advanced-utils';
   providers: [AutocompleteAddressPipe]
 })
 export class AppComponent implements OnInit {
+  constructor(
+    public AutocompleteAddress: AutocompleteAddressPipe,
+    public _MathService: MathService,
+    public _CollectionService: CollectionService
+  ) {}
+
   title = 'ngx-advanced-libraries';
-
-  arrayObj = [
-    {
-      card: 1234
-    },
-    {
-      card: 1234
-    },
-    {
-      card: 12345
-    },
-    {
-      card: 12346
-    }
-  ];
-
-  arrayObj2 = [
-    {
-      card: 1234
-    },
-    {
-      card: 1234
-    },
-    {
-      card: 12345
-    }
-  ];
 
   arraySort = [2, 3, 1, 9, 8];
 
@@ -104,66 +83,36 @@ export class AppComponent implements OnInit {
   origin = [33.92865, -84.30728];
   destination = [33.96953, -84.26158];
 
-  constructor(
-    public AutocompleteAddress: AutocompleteAddressPipe,
-    public _math: MathService
-  ) {}
-
   alphaArray = [{ id: 'b' }, { id: 'a' }, { id: 'ab' }, { id: 'ba' }];
 
-  ngOnInit() {
-    // console.log(
-    //   this.AutocompleteAddress.transform(this.addressAutocompleteData)
-    // );
+  arrayObj = [
+    {
+      card: 1234
+    },
+    {
+      card: 1234
+    },
+    {
+      card: 12345
+    },
+    {
+      card: 12346
+    }
+  ];
 
-    // console.log(
-    //   this.filterPropertyLabels1(this.arrayObj4, this.arrayObj5, 'card')
-    // );
+  arrayObj2 = [
+    {
+      card: 1234
+    },
+    {
+      card: 1234
+    },
+    {
+      card: 12345
+    }
+  ];
 
-    console.log(this.filtrarrayObject(this.alphaArray, 'id'));
-
-    console.log(
-      this._math.distanceBetweenOrigins(this.destination, this.origin)
-    );
-  }
-
-  // filter with array of objects with array of objects
-  filterByele(array1, array2, prop) {
-    return array1.filter(ele1 => {
-      return array2.some(ele2 => ele1[prop] === ele2[prop]);
-    });
-  }
-
-  // uniq filter with array of objects with array of objects and removingDuplicates
-  filterByele2Uniq(array1, array2, prop) {
-    const newArr = array1.filter(ele1 => {
-      return array2.some(ele2 => ele1[prop] === ele2[prop]);
-    });
-
-    return newArr.filter((obj, pos, arr) => {
-      const arrayObj = arr.map(mapObj => mapObj[prop]).indexOf(obj[prop]);
-      return arrayObj === pos;
-    });
-  }
-
-  // notuniq filter with array of objects with array of objects and removingDuplicates
-  filterByele2(array1, array2, prop) {
-    const newArr = array1.filter(ele1 => {
-      return array2.some(ele2 => ele1[prop] === ele2[prop]);
-    });
-
-    return newArr.filter((obj, pos, arr) => {
-      const arrayObj = arr.map(mapObj => mapObj[prop]).indexOf(obj[prop]);
-      return arrayObj !== pos;
-    });
-  }
-
-  // uniq filter with array of objects with array of objects
-  filterByeleUniq(array1, array2, prop) {
-    return array1.filter(ele1 => {
-      return !array2.some(ele2 => ele1[prop] === ele2[prop]);
-    });
-  }
+  arrayObj3 = [{ card: 1234 }, { card: 123456 }];
 
   arrayObj4 = [
     {
@@ -177,41 +126,13 @@ export class AppComponent implements OnInit {
     }
   ];
 
-  arrayObj3 = [{ card: 1234 }, { card: 123456 }];
-
   arrayObj5 = [12345];
 
-  // array of objects with array filter with array
-  filterPropertyLabels1(array1, array2, prop) {
-    return array1.filter(ele1 => {
-      return array2.some(ele2 => ele1[prop].includes(ele2));
-    });
-  }
-
-  // uniq array of objects with array filter with array
-  filterPropertyLabels1Uniq(array1, array2, prop) {
-    return array1.filter(ele1 => {
-      return !array2.some(ele2 => ele1[prop].includes(ele2));
-    });
-  }
-
-  // array of objects with array filter with array of objects
-  filterPropertyLabels(array1, array2, prop) {
-    return array1.filter(ele1 => {
-      return array2.some(ele2 => ele1[prop].includes(ele2[prop]));
-    });
-  }
-
-  // uniq array of objects with array filter with array of objects
-  filterPropertyLabelsUniq(array1, array2, prop) {
-    return array1.filter(ele1 => {
-      return !array2.some(ele2 => ele1[prop].includes(ele2[prop]));
-    });
-  }
-
-  // filter within array of object alphabetically
-  filtrarrayObject(array, prop) {
-    return array.sort((a, b) => a[prop].localeCompare(b[prop]));
+  ngOnInit() {
+    // console.log(
+    //   this.AutocompleteAddress.transform(this.addressAutocompleteData)
+    // );
+    // console.log(this.filtrarrayObject(this.alphaArray, 'id'));
   }
 
   // Calculate the difference of two dates in total days
