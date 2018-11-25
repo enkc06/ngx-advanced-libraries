@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { AutocompleteAddressPipe } from 'ngx-advanced-pipes';
 import { MathService, CollectionService } from 'ngx-advanced-utils';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  providers: [AutocompleteAddressPipe]
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
   constructor(
-    public AutocompleteAddress: AutocompleteAddressPipe,
     public _MathService: MathService,
     public _CollectionService: CollectionService
   ) {}
@@ -132,7 +129,6 @@ export class AppComponent implements OnInit {
     // console.log(
     //   this.AutocompleteAddress.transform(this.addressAutocompleteData)
     // );
-    // console.log(this.filtrarrayObject(this.alphaArray, 'id'));
   }
 
   // Calculate the difference of two dates in total days
