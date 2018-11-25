@@ -8,7 +8,7 @@ import { MathService } from 'ngx-advanced-utils';
   providers: [AutocompleteAddressPipe]
 })
 export class AppComponent implements OnInit {
-  title = 'ngx-pipes';
+  title = 'ngx-advanced-libraries';
 
   arrayObj = [
     {
